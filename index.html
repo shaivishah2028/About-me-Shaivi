@@ -15,12 +15,7 @@
     --text:#e5e7eb;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Poppins,sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
 
 body{
     background: radial-gradient(circle at top,#0b1b3a,#050814 60%);
@@ -28,91 +23,43 @@ body{
     overflow-x:hidden;
 }
 
-/* NAV */
+canvas{position:fixed;top:0;left:0;z-index:-1;}
+
 nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
+    position:fixed;top:0;width:100%;
+    display:flex;justify-content:space-between;
     padding:18px 8%;
     background:rgba(0,0,0,0.35);
     backdrop-filter:blur(14px);
-    z-index:1000;
     border-bottom:1px solid rgba(212,175,55,0.2);
+    z-index:1000;
 }
 
-.logo{
-    color:var(--gold);
-    font-weight:700;
-    letter-spacing:2px;
-}
+.logo{color:var(--gold);font-weight:700;}
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 12px;
-    font-size:14px;
+    color:white;text-decoration:none;margin:0 12px;font-size:14px;
 }
+nav a:hover{color:var(--gold);}
 
-nav a:hover{
-    color:var(--gold);
-}
-
-/* HERO */
 .hero{
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:20px;
+    height:100vh;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:20px;
 }
 
-.hero h1{
-    font-size:3.6rem;
-}
-
-.hero h1 span{
-    color:var(--gold);
-}
-
-.hero h2{
-    color:#aab4c3;
-    font-weight:400;
-    margin-top:10px;
-    min-height:30px;
-}
-
-.hero p{
-    max-width:700px;
-    margin:20px auto;
-    color:#b6c2d1;
-}
+.hero h1{font-size:3.5rem;}
+.hero h1 span{color:var(--gold);}
+.hero h2{color:#aab4c3;font-weight:400;margin-top:10px;}
+.hero p{max-width:700px;margin:20px auto;color:#b6c2d1;}
 
 .btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 28px;
-    background:var(--gold);
-    color:black;
-    border-radius:30px;
-    text-decoration:none;
+    padding:12px 28px;background:var(--gold);
+    color:black;border-radius:30px;text-decoration:none;
 }
 
-/* SECTIONS */
-section{
-    padding:90px 10%;
-}
+section{padding:90px 10%;}
+.title{text-align:center;color:var(--gold);font-size:2.2rem;margin-bottom:30px;}
 
-.title{
-    text-align:center;
-    color:var(--gold);
-    font-size:2.2rem;
-    margin-bottom:30px;
-}
-
-/* CARD */
 .card,.project{
     background:var(--card);
     padding:25px;
@@ -120,95 +67,34 @@ section{
     border:1px solid rgba(255,255,255,0.08);
 }
 
-/* SKILLS */
-.skill{
-    display:inline-block;
-    padding:8px 12px;
-    margin:5px;
-    border-radius:20px;
-    border:1px solid rgba(78,161,255,0.4);
-    font-size:13px;
-}
-
-/* GRID */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:20px;
 }
 
-/* TIMELINE */
-.timeline{
-    position:relative;
-    max-width:900px;
-    margin:auto;
+.skill{
+    display:inline-block;
+    padding:8px 12px;
+    margin:5px;
+    border:1px solid rgba(78,161,255,0.4);
+    border-radius:20px;
+    font-size:13px;
 }
 
-.timeline::after{
-    content:'';
-    position:absolute;
-    width:2px;
-    background:rgba(212,175,55,0.4);
-    top:0;
-    bottom:0;
-    left:50%;
-    transform:translateX(-50%);
-}
-
-.timeline-item{
-    position:relative;
-    width:50%;
-    padding:20px;
-    opacity:0;
-    transform:translateY(40px);
-    transition:all 0.6s ease;
-}
-
-.timeline-item:nth-child(odd){left:0;}
-.timeline-item:nth-child(even){left:50%;}
-
-.timeline-item .content{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.1);
-    padding:20px;
-    border-radius:14px;
-    backdrop-filter:blur(10px);
-}
-
-.timeline-item::before{
-    content:'';
-    position:absolute;
-    width:12px;
-    height:12px;
-    background:var(--gold);
-    border-radius:50%;
-    top:30px;
-}
-
-.timeline-item:nth-child(odd)::before{right:-6px;}
-.timeline-item:nth-child(even)::before{left:-6px;}
-
-.timeline-item.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* MOBILE */
-@media(max-width:768px){
-    .timeline::after{left:10px;}
-    .timeline-item{
-        width:100%;
-        left:0 !important;
-        padding-left:40px;
-    }
-    .timeline-item::before{left:0;}
+footer{
+    text-align:center;
+    padding:30px;
+    background:#02030a;
+    color:#777;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<canvas id="particles"></canvas>
+
 <nav>
     <div class="logo">SS</div>
     <div>
@@ -216,6 +102,7 @@ section{
         <a href="#skills">Skills</a>
         <a href="#achievements">Achievements</a>
         <a href="#contact">Contact</a>
+        <a href="https://github.com/shaivishah2028" target="_blank">GitHub</a>
     </div>
 </nav>
 
@@ -223,7 +110,7 @@ section{
 <section class="hero">
     <div>
         <h1>Hi, I'm <span>Shaivi Shah</span></h1>
-        <h2 id="typing"></h2>
+        <h2>Future Engineer • Robotics • Problem Solver</h2>
         <p>Year 12 student passionate about engineering, robotics, mathematics, and computer science.</p>
         <a class="btn" href="#about">Explore</a>
     </div>
@@ -232,9 +119,18 @@ section{
 <!-- ABOUT -->
 <section id="about">
     <h2 class="title">About Me</h2>
+
     <div class="card">
-        Aspiring engineer interested in robotics, computing, leadership, and STEM problem solving.
-        I enjoy competitions, teamwork, and building logical solutions to real-world challenges.
+        I am a Year 12 student with a strong interest in engineering, robotics, mathematics, and computer science. 
+        I enjoy understanding how systems work, breaking down complex problems, and building logical solutions.
+
+        <br><br>
+
+        Through my academic journey and extracurricular experiences, I have developed skills in teamwork, leadership, communication, and analytical thinking. I am particularly interested in how robotics, AI, and engineering can be used to solve real-world challenges.
+
+        <br><br>
+
+        I aim to pursue Engineering at university and continue developing my skills in problem solving, design thinking, and technology-driven innovation.
     </div>
 </section>
 
@@ -242,121 +138,171 @@ section{
 <section id="skills">
     <h2 class="title">Skills</h2>
     <div class="card">
+
         <div class="skill">Python</div>
         <div class="skill">Robotics (FLL x2)</div>
         <div class="skill">Public Speaking</div>
         <div class="skill">Leadership</div>
+        <div class="skill">Debate</div>
         <div class="skill">Problem Solving</div>
         <div class="skill">Trinity Grade 8 Computer Skills</div>
         <div class="skill">Trinity Grade 6 Keyboard</div>
+
     </div>
 </section>
 
-<!-- ACHIEVEMENTS -->
 <section id="achievements">
-    <h2 class="title">Achievements & Timeline</h2>
+    <h2 class="title">Achievements & Experiences</h2>
 
-    <div class="timeline">
+    <div class="grid">
 
-        <div class="timeline-item">
-            <div class="content">
-                <h3>Robotics & Technology</h3>
-                FLL Cargo Connect (2021–22)<br>
-                FLL SuperPowered (2022–23)<br>
-                AI Workshop – $900 Scholarship<br>
-                Tech Camps & Bootcamps
-            </div>
+        <div class="project">
+            <h3>🤖 Robotics & Technology</h3>
+            <p>
+            Participated in multiple technology-focused programs and robotics competitions, building experience in engineering design, programming, and teamwork.
+            </p>
+            <br>
+            <p>
+            • FIRST LEGO League (FLL) – Cargo Connect (2021–2022): Designed, built, and programmed a LEGO robot to complete mission-based challenges under time constraints.<br><br>
+
+            • FIRST LEGO League (FLL) – SuperPowered (2022–2023): Developed problem-solving strategies and improved robot efficiency through iterative testing and design improvements.<br><br>
+
+            • AI Workshop (Futures Abroad): Selected for a fully funded scholarship (USD $900), exploring artificial intelligence concepts and applications in real-world scenarios.<br><br>
+
+            • Technology Workshops & Camps (2018–2020): Early exposure to coding, engineering principles, and digital problem solving.
+            </p>
         </div>
 
-        <div class="timeline-item">
-            <div class="content">
-                <h3>Public Speaking</h3>
-                Trinity Communication Skills (Grades 4–8)<br>
-                Gavels Club Awards<br>
-                Outstanding Gavelier of the Year
-            </div>
+        <div class="project">
+            <h3>🗣️ Public Speaking & Communication</h3>
+            <p>
+            Developed strong communication and presentation skills through structured Trinity College London examinations and competitive speaking environments.
+            </p>
+            <br>
+            <p>
+            • Trinity Communication Skills (Grades 4–8): Achieved Distinction in early grades and Merit in Grade 8, demonstrating progression in structured communication, persuasion, and clarity of speech.<br><br>
+
+            • Gavels Club: Actively participated in debate and impromptu speaking competitions, receiving multiple awards including Best Speaker, Best Evaluator, Role Player recognition, and Outstanding Gavelier of the Year (2025).
+            </p>
         </div>
 
-        <div class="timeline-item">
-            <div class="content">
-                <h3>Leadership & MUN</h3>
-                EISJ MUN (2023)<br>
-                JC MUN (2024)<br>
-                World Scholar’s Cup Silver Awards
-            </div>
+        <div class="project">
+            <h3>🌍 Model United Nations & Leadership</h3>
+            <p>
+            Engaged in global discussion platforms and leadership-focused events, strengthening diplomacy, teamwork, and research skills.
+            </p>
+            <br>
+            <p>
+            • EISJ MUN (2023): Participated in formal debate and resolution writing on global issues.<br><br>
+
+            • JC MUN (2024): Continued development in structured argumentation, negotiation, and public speaking.<br><br>
+
+            • World Scholar’s Cup: Achieved multiple Silver awards in writing and debate categories, demonstrating academic versatility and teamwork.<br><br>
+
+            • Youth Leadership Forum (Green Earth Expo): Engaged in sustainability and leadership discussions.
+            </p>
         </div>
 
-        <div class="timeline-item">
-            <div class="content">
-                <h3>Academic</h3>
-                UKMT IMC Bronze (2025)<br>
-                Physics Challenge (2026)<br>
-                Academic Excellence in Sciences
-            </div>
+        <div class="project">
+            <h3>📚 Academic Achievements</h3>
+            <p>
+            Consistent academic performance in STEM subjects with participation in national and international competitions.
+            </p>
+            <br>
+            <p>
+            • UK Mathematics Trust (JMC): Participation in competitive mathematical problem solving.<br><br>
+
+            • UKMT Intermediate Mathematical Challenge (IMC): Awarded Bronze certificate in 2025.<br><br>
+
+            • KenKen UAE National Competition: Achieved Bronze award in logical reasoning competition.<br><br>
+
+            • Physics Challenge (2026): Participated in advanced problem-solving physics competition.<br><br>
+
+            • Academic Excellence in Sciences (2021–2023): Recognised for consistent high performance in science subjects.
+            </p>
         </div>
 
-        <div class="timeline-item">
-            <div class="content">
-                <h3>Arts & Creativity</h3>
-                Matilda & Shrek Productions<br>
-                Drama Camps<br>
-                Trinity Keyboard Grade 2 Distinction
-            </div>
+        <div class="project">
+            <h3>🎭 Arts, Music & Creativity</h3>
+            <p>
+            Developed creativity, discipline, and performance skills through music, theatre, and creative writing.
+            </p>
+            <br>
+            <p>
+            • Theatre Productions: Participated in “Matilda” (Hive Productions) and “Shrek” school production, developing confidence and teamwork in live performance environments.<br><br>
+
+            • Drama Camps (Hive Productions): Engaged in structured acting workshops and performance training.<br><br>
+
+            • Music (Trinity Keyboard): Achieved Grade 2 Distinction, demonstrating discipline in musical training and performance.
+            </p>
         </div>
 
-        <div class="timeline-item">
-            <div class="content">
-                <h3>Programs & Internships</h3>
-                Hive Internship (115 hours)<br>
-                University Engineering Camp<br>
-                Canadian University Workshops
-            </div>
+        <div class="project">
+            <h3>🏫 Programs, Internships & Enrichment</h3>
+            <p>
+            Participated in academic enrichment programs and internships to gain exposure to engineering, university-level learning, and professional environments.
+            </p>
+            <br>
+            <p>
+            • Internship at The Hive: Completed 115 hours of work experience, developing workplace communication and organisational skills.<br><br>
+
+            • University of Wollongong Engineering Camp: Exposure to engineering concepts, design thinking, and university-level STEM learning.<br><br>
+
+            • Canadian University Workshops: Participated in sessions covering architecture, AI, cybersecurity, and mechatronics.<br><br>
+
+            • VJCC Spring Course (2024): Completed structured academic enrichment programme.
+            </p>
         </div>
 
     </div>
 </section>
-
 <!-- CONTACT -->
 <section id="contact">
     <h2 class="title">Contact</h2>
+
     <div class="card" style="text-align:center;">
-        📧 Email: your-email@example.com<br>
-        💻 GitHub: github.com/shaivishah2028
+        📧 Email: your-email@example.com<br><br>
+        💻 GitHub: <a href="https://github.com/shaivishah2028" style="color:gold;">shaivishah2028</a>
+        <br><br>
+        Open to engineering, robotics & STEM opportunities.
     </div>
 </section>
 
+<footer>
+    © 2026 Shaivi Shah | Engineering Portfolio
+</footer>
+
 <script>
-// typing effect (RESTORED)
-const text = ["Future Engineer", "Robotics Enthusiast", "Problem Solver"];
-let i=0,j=0,del=false;
+// particles
+const c=document.getElementById("particles");
+const ctx=c.getContext("2d");
+c.width=innerWidth;
+c.height=innerHeight;
 
-function type(){
-    const el=document.getElementById("typing");
-    let current=text[i];
-
-    if(!del){
-        el.innerHTML=current.substring(0,j++);
-        if(j>current.length){del=true;setTimeout(type,1000);return;}
-    } else {
-        el.innerHTML=current.substring(0,j--);
-        if(j<0){del=false;i=(i+1)%text.length;}
-    }
-    setTimeout(type,100);
-}
-type();
-
-// timeline animation
-const items=document.querySelectorAll(".timeline-item");
-
-const observer=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        }
+let p=[];
+for(let i=0;i<60;i++){
+    p.push({
+        x:Math.random()*c.width,
+        y:Math.random()*c.height,
+        r:Math.random()*2,
+        dx:(Math.random()-0.5),
+        dy:(Math.random()-0.5)
     });
-},{threshold:0.2});
+}
 
-items.forEach(i=>observer.observe(i));
+function draw(){
+    ctx.clearRect(0,0,c.width,c.height);
+    ctx.fillStyle="rgba(212,175,55,0.5)";
+    p.forEach(o=>{
+        ctx.beginPath();
+        ctx.arc(o.x,o.y,o.r,0,Math.PI*2);
+        ctx.fill();
+        o.x+=o.dx;
+        o.y+=o.dy;
+    });
+    requestAnimationFrame(draw);
+}
+draw();
 </script>
 
 </body>
