@@ -3,383 +3,428 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shaivi Shah | Portfolio</title>
+<title>Shaivi Shah | Engineering Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+:root{
+    --bg:#050814;
+    --card:rgba(255,255,255,0.06);
+    --gold:#d4af37;
+    --blue:#4ea1ff;
+    --text:#e5e7eb;
+}
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-html{
-    scroll-behavior:smooth;
+    font-family:Poppins,sans-serif;
 }
 
 body{
-    background:#0f172a;
-    color:white;
+    background: radial-gradient(circle at top,#0b1b3a,#050814 60%);
+    color:var(--text);
+    overflow-x:hidden;
 }
 
+/* PARTICLES */
+canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+
+/* NAV */
 nav{
     position:fixed;
-    width:100%;
     top:0;
-    background:rgba(15,23,42,0.95);
-    backdrop-filter:blur(10px);
-    padding:20px 8%;
+    width:100%;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    padding:18px 8%;
+    background:rgba(0,0,0,0.4);
+    backdrop-filter:blur(12px);
     z-index:1000;
 }
 
 .logo{
-    font-size:1.5rem;
     font-weight:700;
-    color:#60a5fa;
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:30px;
+    color:var(--gold);
+    letter-spacing:2px;
 }
 
 nav a{
-    text-decoration:none;
     color:white;
-    transition:0.3s;
+    text-decoration:none;
+    margin:0 12px;
+    font-size:14px;
 }
 
 nav a:hover{
-    color:#60a5fa;
+    color:var(--gold);
 }
 
+/* HERO */
 .hero{
-    min-height:100vh;
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:100px 20px;
+    padding:20px;
 }
 
-.hero-content h1{
-    font-size:4rem;
-    margin-bottom:15px;
+.hero h1{
+    font-size:3.5rem;
 }
 
-.hero-content span{
-    color:#60a5fa;
+.hero h1 span{
+    color:var(--gold);
 }
 
-.hero-content h2{
+.hero h2{
     font-weight:400;
-    color:#cbd5e1;
-    margin-bottom:25px;
+    color:#aab4c3;
+    margin-top:10px;
+    min-height:30px;
 }
 
-.hero-content p{
+.hero p{
     max-width:700px;
-    margin:auto;
-    color:#94a3b8;
-    line-height:1.8;
+    margin:20px auto;
+    color:#b6c2d1;
+    line-height:1.7;
 }
 
 .btn{
     display:inline-block;
-    margin-top:30px;
-    padding:12px 28px;
-    background:#60a5fa;
-    color:white;
-    text-decoration:none;
+    margin-top:20px;
+    padding:12px 25px;
+    background:linear-gradient(135deg,var(--gold),#ffdf70);
+    color:#000;
     border-radius:30px;
+    font-weight:600;
+    text-decoration:none;
     transition:0.3s;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
+    transform:scale(1.05);
 }
 
+/* SECTIONS */
 section{
-    padding:100px 10%;
+    padding:90px 10%;
 }
 
-.section-title{
+.title{
+    font-size:2rem;
+    color:var(--gold);
+    margin-bottom:25px;
     text-align:center;
-    font-size:2.5rem;
-    margin-bottom:50px;
-    color:#60a5fa;
 }
 
+/* GLASS CARD */
 .card{
-    background:#1e293b;
-    padding:30px;
-    border-radius:20px;
+    background:var(--card);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:25px;
+    border-radius:16px;
+    backdrop-filter:blur(10px);
     margin-bottom:20px;
 }
 
+/* SKILLS */
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+}
+
+.skill{
+    padding:10px 15px;
+    border-radius:20px;
+    background:rgba(78,161,255,0.15);
+    border:1px solid rgba(78,161,255,0.4);
+    font-size:13px;
+}
+
+/* GRID */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
 }
 
-.skill{
-    background:#1e293b;
-    text-align:center;
-    padding:20px;
-    border-radius:15px;
-    transition:0.3s;
-}
-
-.skill:hover{
-    transform:translateY(-5px);
-}
-
-.timeline-item{
-    background:#1e293b;
-    padding:25px;
-    border-left:5px solid #60a5fa;
-    margin-bottom:20px;
-    border-radius:10px;
-}
-
+/* PROJECT */
 .project{
-    background:#1e293b;
-    padding:25px;
-    border-radius:20px;
+    padding:20px;
+    border-radius:16px;
+    background:var(--card);
+    transition:0.3s;
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.project:hover{
+    transform:translateY(-8px);
+    border-color:var(--gold);
+    box-shadow:0 0 25px rgba(212,175,55,0.15);
 }
 
 .project h3{
-    color:#60a5fa;
+    color:var(--gold);
     margin-bottom:10px;
 }
 
-.contact{
-    text-align:center;
+/* TIMELINE */
+.timeline{
+    max-width:800px;
+    margin:auto;
 }
 
-.contact p{
-    margin:15px 0;
-    color:#cbd5e1;
+.item{
+    border-left:3px solid var(--gold);
+    padding-left:20px;
+    margin-bottom:20px;
 }
 
+/* FOOTER */
 footer{
     text-align:center;
     padding:30px;
-    background:#020617;
-    color:#94a3b8;
+    color:#777;
+    background:#02030a;
 }
 
-@media(max-width:768px){
-
-    .hero-content h1{
-        font-size:2.5rem;
-    }
-
-    nav{
-        flex-direction:column;
-        gap:15px;
-    }
-
-    nav ul{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
+/* ANIMATION */
+.hidden{
+    opacity:0;
+    transform:translateY(30px);
+    transition:all 0.8s ease;
 }
 
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
 </style>
 </head>
+
 <body>
+
+<canvas id="particles"></canvas>
 
 <nav>
     <div class="logo">SS</div>
-
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="https://github.com/shaivishah2028" target="_blank">GitHub</a>
+    </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-
-    <div class="hero-content">
+    <div>
         <h1>Hi, I'm <span>Shaivi Shah</span></h1>
-
-        <h2>Year 12 Student • Aspiring Engineer • Robotics Enthusiast</h2>
-
+        <h2 id="typing"></h2>
         <p>
-            Passionate about Mathematics, Further Mathematics, Physics,
-            Computer Science, robotics, and technology. I enjoy solving
-            problems, building projects, and exploring how engineering
-            and computing can create innovative solutions.
+            Year 12 student passionate about engineering, robotics, mathematics, 
+            and computer science. I enjoy solving real-world problems through logic, 
+            design, and technology.
         </p>
-
-        <a href="#about" class="btn">Learn More</a>
+        <a class="btn" href="#about">Explore Portfolio</a>
     </div>
-
 </section>
 
-<section id="about">
+<!-- ABOUT -->
+<section id="about" class="hidden">
+    <h2 class="title">About Me</h2>
+    <div class="card">
+        I am a Year 12 student with strong interest in engineering, robotics, and computing. 
+        I aim to study engineering at university and work on innovative technologies in the future.
+        <br><br>
+        I have developed discipline and technical ability through academic studies and Trinity certifications.
+    </div>
+</section>
 
-    <h2 class="section-title">About Me</h2>
+<!-- SKILLS -->
+<section id="skills" class="hidden">
+    <h2 class="title">Skills</h2>
+    <div class="skills">
+        <div class="skill">Python</div>
+        <div class="skill">Problem Solving</div>
+        <div class="skill">Robotics (FLL x2)</div>
+        <div class="skill">Mathematics</div>
+        <div class="skill">Physics</div>
+        <div class="skill">Teamwork</div>
+        <div class="skill">Computer Skills (Trinity Grade 8)</div>
+        <div class="skill">Keyboard Grade 6</div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="hidden">
+    <h2 class="title">Education</h2>
+    <div class="timeline">
+        <div class="item">
+            <h3>A-Levels</h3>
+            Maths, Further Maths, Physics, Computer Science
+        </div>
+        <div class="item">
+            <h3>GCSE</h3>
+            Computer Science, Design & Technology, Sciences, Maths
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="hidden">
+    <h2 class="title">Projects</h2>
+
+    <div class="grid">
+
+        <div class="project">
+            <h3>Portfolio Website</h3>
+            <p>Modern engineering-themed personal website hosted on GitHub Pages.</p>
+        </div>
+
+        <div class="project">
+            <h3>Robotics (FLL)</h3>
+            <p>Participated in FIRST LEGO League competitions twice, building and programming robots.</p>
+        </div>
+
+        <div class="project">
+            <h3>Python Learning Projects</h3>
+            <p>Small coding exercises and problem-solving programs in Python.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="hidden">
+    <h2 class="title">Achievements</h2>
 
     <div class="card">
-
-        <p>
-            Hi, I'm Shaivi Shah, a Year 12 student with a strong interest in
-            engineering, mathematics, computer science, and robotics.
-            I enjoy solving problems, learning new technologies,
-            and applying logical thinking to real-world challenges.
-        </p>
-
-        <br>
-
-        <p>
-            Alongside my academic studies, I have achieved Trinity
-            qualifications in both Keyboard and Computer Skills,
-            demonstrating dedication, discipline, and a commitment
-            to continuous learning.
-        </p>
-
+        • Trinity Grade 8 Computer Skills<br>
+        • Trinity Grade 6 Keyboard<br>
+        • FLL Robotics Competition (x2)<br>
+        • Strong academic foundation in STEM subjects
     </div>
-
 </section>
 
-<section id="education">
-
-    <h2 class="section-title">Education</h2>
-
-    <div class="timeline-item">
-        <h3>Current Studies</h3>
-        <p>Mathematics</p>
-        <p>Further Mathematics</p>
-        <p>Physics</p>
-        <p>Computer Science</p>
+<!-- CONTACT -->
+<section class="hidden">
+    <h2 class="title">Contact</h2>
+    <div class="card">
+        Email: your-email@example.com (replace with your real email)<br>
+        GitHub: https://github.com/shaivishah2028
     </div>
-
-    <div class="timeline-item">
-        <h3>GCSE Subjects</h3>
-        <p>Computer Science</p>
-        <p>Design & Technology</p>
-        <p>Mathematics</p>
-        <p>Sciences</p>
-    </div>
-
-</section>
-
-<section id="skills">
-
-    <h2 class="section-title">Skills</h2>
-
-    <div class="grid">
-
-        <div class="skill">Python Programming</div>
-        <div class="skill">Problem Solving</div>
-        <div class="skill">Robotics</div>
-        <div class="skill">Teamwork</div>
-        <div class="skill">Public Speaking</div>
-        <div class="skill">Computer Skills</div>
-        <div class="skill">Keyboard Performance</div>
-        <div class="skill">Microsoft Office</div>
-
-    </div>
-
-</section>
-
-<section id="achievements">
-
-    <h2 class="section-title">Achievements & Certifications</h2>
-
-    <div class="grid">
-
-        <div class="card">
-            <h3>Trinity Grade 8</h3>
-            <p>Computer Skills</p>
-        </div>
-
-        <div class="card">
-            <h3>Trinity Grade 6</h3>
-            <p>Keyboard Performance</p>
-        </div>
-
-        <div class="card">
-            <h3>STEM & Robotics</h3>
-            <p>Participation in robotics and engineering activities.</p>
-        </div>
-
-    </div>
-
-</section>
-
-<section id="projects">
-
-    <h2 class="section-title">Projects</h2>
-
-    <div class="grid">
-
-        <div class="project">
-            <h3>Personal Portfolio Website</h3>
-            <p>
-                A responsive website showcasing my education,
-                achievements, skills, and future goals.
-            </p>
-        </div>
-
-        <div class="project">
-            <h3>Robotics Projects</h3>
-            <p>
-                Robotics challenges and engineering-focused projects.
-                More details coming soon.
-            </p>
-        </div>
-
-        <div class="project">
-            <h3>Python Projects</h3>
-            <p>
-                Programming projects demonstrating logical thinking
-                and problem-solving skills.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-<section id="contact">
-
-    <h2 class="section-title">Contact</h2>
-
-    <div class="card contact">
-
-        <p>📧 Contact me via email</p>
-
-        <p>
-            Replace this text with the email address you would like
-            displayed publicly.
-        </p>
-
-        <br>
-
-        <p>GitHub Profile Coming Soon</p>
-
-    </div>
-
 </section>
 
 <footer>
-    © 2026 Shaivi Shah | Portfolio Website
+    © 2026 Shaivi Shah | Engineering Portfolio
 </footer>
+
+<script>
+// TYPEWRITER
+const text = ["Future Engineer", "Robotics Enthusiast", "Problem Solver"];
+let i = 0;
+let j = 0;
+let current = "";
+let isDeleting = false;
+
+function type(){
+    const el = document.getElementById("typing");
+
+    if(i < text.length){
+        if(!isDeleting && j <= text[i].length){
+            current = text[i].substring(0,j++);
+        }
+
+        if(isDeleting && j >= 0){
+            current = text[i].substring(0,j--);
+        }
+
+        el.innerHTML = current;
+
+        if(j === text[i].length){
+            isDeleting = true;
+            setTimeout(type,1000);
+            return;
+        }
+
+        if(j === 0 && isDeleting){
+            isDeleting = false;
+            i++;
+            if(i === text.length) i = 0;
+        }
+    }
+
+    setTimeout(type,120);
+}
+type();
+
+// SCROLL ANIMATION
+const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+        if(e.isIntersecting){
+            e.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".hidden").forEach(el=>{
+    obs.observe(el);
+});
+
+// PARTICLES
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<80;i++){
+    particles.push({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*2,
+        dx:(Math.random()-0.5),
+        dy:(Math.random()-0.5)
+    });
+}
+
+function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle="rgba(212,175,55,0.6)";
+
+    particles.forEach(p=>{
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fill();
+
+        p.x += p.dx;
+        p.y += p.dy;
+
+        if(p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if(p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    });
+
+    requestAnimationFrame(draw);
+}
+draw();
+</script>
 
 </body>
 </html>
