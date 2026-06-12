@@ -1,3 +1,85 @@
+Summer To- Do List
+
+Before Summer
+- [ ] Apply for IIT
+- [x] Apply for Curtin
+- [x] Make a Schoolhouse profile
+- [ ] Interview for FGC
+- [ ] Send invites
+
+
+During Summer
+- [ ] SAT Prep
+- [ ] Celebrate 16th Bday
+
+
+Before/During Summer
+- [ ] Make a LinkedIn account
+- [ ] 
+
+
+
+
+Sweet 16
+invite list
+- Sarah.      ✅
+- Tanya.      ✅
+- Sophia.    ✅
+- Yubin        ✅
+- Lingfei      —
+- Arjaka. 
+- Kavya.      ✅
+- Agnes       ✅
+- Tanishqa. ✅
+- Rania.       ✅
+
+Maybe:
+- Mansvi      ✅
+- Aashi         ✅ 
+
+
+
+
+
+
+￼
+
+
+
+
+
+
+Heyyyy
+
+It’s been a while, how are u?  
+
+Anywayss I wanted to invite you to my 16th birthday! 🎉
+
+I’ve attached the invite below with all the information. I’d absolutely love for you to come, so please let me know if you’ll be able to make it.
+
+Hope to see you there! 💜Hiiiiii! 🎉
+
+The birthday mission details are finally here! 🫡
+
+I've attached the invite below with all the information. I'd love for you to be there, so please let me know if you'll be able to make it.
+
+Hope to see you there! 💜
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,11 +105,19 @@ body{
     overflow-x:hidden;
 }
 
-canvas{position:fixed;top:0;left:0;z-index:-1;}
+canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+}
 
 nav{
-    position:fixed;top:0;width:100%;
-    display:flex;justify-content:space-between;
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
     padding:18px 8%;
     background:rgba(0,0,0,0.35);
     backdrop-filter:blur(14px);
@@ -38,27 +128,65 @@ nav{
 .logo{color:var(--gold);font-weight:700;}
 
 nav a{
-    color:white;text-decoration:none;margin:0 12px;font-size:14px;
+    color:white;
+    text-decoration:none;
+    margin:0 12px;
+    font-size:14px;
 }
 nav a:hover{color:var(--gold);}
 
 .hero{
-    height:100vh;display:flex;align-items:center;justify-content:center;
-    text-align:center;padding:20px;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
 }
 
 .hero h1{font-size:3.5rem;}
 .hero h1 span{color:var(--gold);}
-.hero h2{color:#aab4c3;font-weight:400;margin-top:10px;}
-.hero p{max-width:700px;margin:20px auto;color:#b6c2d1;}
 
-.btn{
-    padding:12px 28px;background:var(--gold);
-    color:black;border-radius:30px;text-decoration:none;
+#typing{
+    color:#aab4c3;
+    font-weight:400;
+    margin-top:10px;
+    min-height:30px;
+    border-right:2px solid var(--gold);
+    display:inline-block;
+    padding-right:5px;
+    white-space:nowrap;
+    animation:blink 0.8s infinite;
 }
 
-section{padding:90px 10%;}
-.title{text-align:center;color:var(--gold);font-size:2.2rem;margin-bottom:30px;}
+@keyframes blink{
+    50%{border-color:transparent;}
+}
+
+.hero p{
+    max-width:700px;
+    margin:20px auto;
+    color:#b6c2d1;
+}
+
+.btn{
+    padding:12px 28px;
+    background:var(--gold);
+    color:black;
+    border-radius:30px;
+    text-decoration:none;
+}
+
+section{
+    padding:90px 10%;
+}
+
+.title{
+    text-align:center;
+    color:var(--gold);
+    font-size:2.2rem;
+    margin-bottom:30px;
+}
 
 .card,.project{
     background:var(--card);
@@ -82,11 +210,38 @@ section{padding:90px 10%;}
     font-size:13px;
 }
 
+.stat{
+    padding:10px 15px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(212,175,55,0.2);
+    border-radius:20px;
+    font-size:13px;
+}
+
+.filters{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.filters button{
+    margin:5px;
+    padding:8px 14px;
+    border-radius:20px;
+    border:1px solid var(--gold);
+    background:transparent;
+    color:white;
+    cursor:pointer;
+}
+
 footer{
     text-align:center;
     padding:30px;
     background:#02030a;
     color:#777;
+}
+
+.timeline-item{
+    margin-bottom:15px;
 }
 
 </style>
@@ -111,18 +266,16 @@ footer{
 <section class="hero">
     <div>
         <h1>Hi, I'm <span>Shaivi Shah</span></h1>
-        <h2>Future Engineer • Robotics • Problem Solver</h2>
+        <h2 id="typing"></h2>
 
         <div style="margin-top:20px; display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
             <div class="stat">61+ Achievements</div>
-            <div class="stat">2 FLL Seasons</div>
+            <div class="stat">FLL Robotics</div>
             <div class="stat">AI Scholarship</div>
-            <div class="stat">UKMT + Physics Competitions</div>
+            <div class="stat">UKMT + Physics</div>
         </div>
 
-        <p>
-            Year 12 student passionate about engineering, robotics, mathematics, and computer science.
-        </p>
+        <p>Year 12 student passionate about engineering, robotics, mathematics, and computer science.</p>
 
         <a class="btn" href="#about">Explore Portfolio</a>
     </div>
@@ -146,7 +299,6 @@ footer{
     </div>
 </section>
 
-
 <!-- Engineering Statement -->
 <section>
     <h2 class="title">Engineering Statement</h2>
@@ -164,8 +316,6 @@ footer{
     </div>
 </section>
 
-
-
 <!-- SKILLS -->
 <section id="skills">
     <h2 class="title">Skills</h2>
@@ -182,6 +332,7 @@ footer{
     </div>
 </section>
 
+<!-- ACHIEVEMENTS -->
 <section id="achievements">
     <h2 class="title">Achievements & Experiences</h2>
 
@@ -287,23 +438,57 @@ footer{
 
     </div>
 </section>
+
+
+
+
+
 <!-- CONTACT -->
 <section id="contact">
     <h2 class="title">Contact</h2>
 
     <div class="card" style="text-align:center;">
-        📧 Email: your-email@example.com<br><br>
-        💻 GitHub: <a href="https://github.com/shaivishah2028" style="color:gold;">shaivishah2028</a>
-        <br><br>
-        Open to engineering, robotics & STEM opportunities.
+        📧 Email: your-email@example.com<br>
+        💻 GitHub: shaivishah2028
     </div>
 </section>
 
 <footer>
-    © 2026 Shaivi Shah | Engineering Portfolio
+© 2026 Shaivi Shah
 </footer>
 
 <script>
+
+// typing animation (FIXED)
+const text = "Future Engineer • Robotics • Problem Solver";
+let i = 0;
+
+function typeWriter(){
+    const el = document.getElementById("typing");
+    if(!el) return;
+
+    if(i < text.length){
+        el.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 60);
+    }
+}
+
+window.addEventListener("DOMContentLoaded", typeWriter);
+
+
+// filter function
+function filter(type){
+    document.querySelectorAll(".timeline-item").forEach(el=>{
+        if(type === "all" || el.classList.contains(type)){
+            el.style.display = "block";
+        } else {
+            el.style.display = "none";
+        }
+    });
+}
+
+
 // particles
 const c=document.getElementById("particles");
 const ctx=c.getContext("2d");
@@ -315,7 +500,7 @@ for(let i=0;i<60;i++){
     p.push({
         x:Math.random()*c.width,
         y:Math.random()*c.height,
-        r:Math.random()*2,
+        r:2,
         dx:(Math.random()-0.5),
         dy:(Math.random()-0.5)
     });
