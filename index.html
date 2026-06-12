@@ -88,6 +88,46 @@ footer{
     background:#02030a;
     color:#777;
 }
+
+.stat{
+    padding:10px 15px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(212,175,55,0.2);
+    border-radius:20px;
+    font-size:13px;
+}
+
+.filters{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.filters button{
+    margin:5px;
+    padding:8px 14px;
+    border-radius:20px;
+    border:1px solid var(--gold);
+    background:transparent;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.filters button:hover{
+    background:var(--gold);
+    color:black;
+}
+
+/* timeline animation */
+.timeline-item{
+    opacity:1;
+    margin-bottom:15px;
+    transition:0.4s;
+}
+
+.hide{
+    display:none;
+}
 </style>
 </head>
 
@@ -111,8 +151,19 @@ footer{
     <div>
         <h1>Hi, I'm <span>Shaivi Shah</span></h1>
         <h2>Future Engineer • Robotics • Problem Solver</h2>
-        <p>Year 12 student passionate about engineering, robotics, mathematics, and computer science.</p>
-        <a class="btn" href="#about">Explore</a>
+
+        <div style="margin-top:20px; display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+            <div class="stat">61+ Achievements</div>
+            <div class="stat">2 FLL Seasons</div>
+            <div class="stat">AI Scholarship</div>
+            <div class="stat">UKMT + Physics Competitions</div>
+        </div>
+
+        <p>
+            Year 12 student passionate about engineering, robotics, mathematics, and computer science.
+        </p>
+
+        <a class="btn" href="#about">Explore Portfolio</a>
     </div>
 </section>
 
@@ -121,32 +172,51 @@ footer{
     <h2 class="title">About Me</h2>
 
     <div class="card">
-        I am a Year 12 student with a strong interest in engineering, robotics, mathematics, and computer science. 
-        I enjoy understanding how systems work, breaking down complex problems, and building logical solutions.
+        I am a Year 12 student aspiring to study Engineering at university.
 
         <br><br>
 
-        Through my academic journey and extracurricular experiences, I have developed skills in teamwork, leadership, communication, and analytical thinking. I am particularly interested in how robotics, AI, and engineering can be used to solve real-world challenges.
+        I am particularly interested in how systems, robotics, and computing can be used to solve real-world problems.
+        My experience in competitions, leadership roles, and technical workshops has helped me develop analytical thinking, resilience, and teamwork skills.
 
         <br><br>
 
-        I aim to pursue Engineering at university and continue developing my skills in problem solving, design thinking, and technology-driven innovation.
+        I enjoy breaking down complex problems, building structured solutions, and improving ideas through iteration — especially in robotics and STEM environments.
     </div>
 </section>
+
+
+<!-- Engineering Statement -->
+<section>
+    <h2 class="title">Engineering Statement</h2>
+
+    <div class="card">
+        I am interested in engineering because it combines creativity, logic, and real-world impact.
+
+        <br><br>
+
+        I am especially drawn to robotics, AI, and computational systems, where I can apply mathematics and programming to design practical solutions.
+
+        <br><br>
+
+        My goal is to study Engineering at university and contribute to developing technologies that improve efficiency, accessibility, and problem-solving in everyday life.
+    </div>
+</section>
+
+
 
 <!-- SKILLS -->
 <section id="skills">
     <h2 class="title">Skills</h2>
+
     <div class="card">
 
-        <div class="skill">Python</div>
-        <div class="skill">Robotics (FLL x2)</div>
-        <div class="skill">Public Speaking</div>
-        <div class="skill">Leadership</div>
-        <div class="skill">Debate</div>
-        <div class="skill">Problem Solving</div>
-        <div class="skill">Trinity Grade 8 Computer Skills</div>
-        <div class="skill">Trinity Grade 6 Keyboard</div>
+        <div class="skill">Python – problem solving & logic development</div>
+        <div class="skill">Robotics – FLL competitions (design + strategy)</div>
+        <div class="skill">Public Speaking – Trinity Grade 8 + awards</div>
+        <div class="skill">Leadership – MUN + group competitions</div>
+        <div class="skill">Mathematical Thinking – UKMT & physics challenges</div>
+        <div class="skill">Team Collaboration – robotics + debate teams</div>
 
     </div>
 </section>
@@ -303,6 +373,22 @@ function draw(){
     requestAnimationFrame(draw);
 }
 draw();
+
+function filter(type){
+    const items=document.querySelectorAll(".timeline-item");
+
+    items.forEach(item=>{
+        if(type==="all"){
+            item.style.display="block";
+        } else {
+            if(item.classList.contains(type)){
+                item.style.display="block";
+            } else {
+                item.style.display="none";
+            }
+        }
+    });
+}
 </script>
 
 </body>
