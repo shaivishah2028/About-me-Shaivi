@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shaivi Shah | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(15,23,42,0.95);
+    backdrop-filter:blur(10px);
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:700;
+    color:#60a5fa;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#60a5fa;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero-content h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.hero-content span{
+    color:#60a5fa;
+}
+
+.hero-content h2{
+    font-weight:400;
+    color:#cbd5e1;
+    margin-bottom:25px;
+}
+
+.hero-content p{
+    max-width:700px;
+    margin:auto;
+    color:#94a3b8;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 28px;
+    background:#60a5fa;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:50px;
+    color:#60a5fa;
+}
+
+.card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:20px;
+    margin-bottom:20px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.skill{
+    background:#1e293b;
+    text-align:center;
+    padding:20px;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.skill:hover{
+    transform:translateY(-5px);
+}
+
+.timeline-item{
+    background:#1e293b;
+    padding:25px;
+    border-left:5px solid #60a5fa;
+    margin-bottom:20px;
+    border-radius:10px;
+}
+
+.project{
+    background:#1e293b;
+    padding:25px;
+    border-radius:20px;
+}
+
+.project h3{
+    color:#60a5fa;
+    margin-bottom:10px;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:15px 0;
+    color:#cbd5e1;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#020617;
+    color:#94a3b8;
+}
+
+@media(max-width:768px){
+
+    .hero-content h1{
+        font-size:2.5rem;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">SS</div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+
+    <div class="hero-content">
+        <h1>Hi, I'm <span>Shaivi Shah</span></h1>
+
+        <h2>Year 12 Student • Aspiring Engineer • Robotics Enthusiast</h2>
+
+        <p>
+            Passionate about Mathematics, Further Mathematics, Physics,
+            Computer Science, robotics, and technology. I enjoy solving
+            problems, building projects, and exploring how engineering
+            and computing can create innovative solutions.
+        </p>
+
+        <a href="#about" class="btn">Learn More</a>
+    </div>
+
+</section>
+
+<section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="card">
+
+        <p>
+            Hi, I'm Shaivi Shah, a Year 12 student with a strong interest in
+            engineering, mathematics, computer science, and robotics.
+            I enjoy solving problems, learning new technologies,
+            and applying logical thinking to real-world challenges.
+        </p>
+
+        <br>
+
+        <p>
+            Alongside my academic studies, I have achieved Trinity
+            qualifications in both Keyboard and Computer Skills,
+            demonstrating dedication, discipline, and a commitment
+            to continuous learning.
+        </p>
+
+    </div>
+
+</section>
+
+<section id="education">
+
+    <h2 class="section-title">Education</h2>
+
+    <div class="timeline-item">
+        <h3>Current Studies</h3>
+        <p>Mathematics</p>
+        <p>Further Mathematics</p>
+        <p>Physics</p>
+        <p>Computer Science</p>
+    </div>
+
+    <div class="timeline-item">
+        <h3>GCSE Subjects</h3>
+        <p>Computer Science</p>
+        <p>Design & Technology</p>
+        <p>Mathematics</p>
+        <p>Sciences</p>
+    </div>
+
+</section>
+
+<section id="skills">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="grid">
+
+        <div class="skill">Python Programming</div>
+        <div class="skill">Problem Solving</div>
+        <div class="skill">Robotics</div>
+        <div class="skill">Teamwork</div>
+        <div class="skill">Public Speaking</div>
+        <div class="skill">Computer Skills</div>
+        <div class="skill">Keyboard Performance</div>
+        <div class="skill">Microsoft Office</div>
+
+    </div>
+
+</section>
+
+<section id="achievements">
+
+    <h2 class="section-title">Achievements & Certifications</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Trinity Grade 8</h3>
+            <p>Computer Skills</p>
+        </div>
+
+        <div class="card">
+            <h3>Trinity Grade 6</h3>
+            <p>Keyboard Performance</p>
+        </div>
+
+        <div class="card">
+            <h3>STEM & Robotics</h3>
+            <p>Participation in robotics and engineering activities.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="projects">
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="grid">
+
+        <div class="project">
+            <h3>Personal Portfolio Website</h3>
+            <p>
+                A responsive website showcasing my education,
+                achievements, skills, and future goals.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>Robotics Projects</h3>
+            <p>
+                Robotics challenges and engineering-focused projects.
+                More details coming soon.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>Python Projects</h3>
+            <p>
+                Programming projects demonstrating logical thinking
+                and problem-solving skills.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact">
+
+    <h2 class="section-title">Contact</h2>
+
+    <div class="card contact">
+
+        <p>📧 Contact me via email</p>
+
+        <p>
+            Replace this text with the email address you would like
+            displayed publicly.
+        </p>
+
+        <br>
+
+        <p>GitHub Profile Coming Soon</p>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Shaivi Shah | Portfolio Website
+</footer>
+
+</body>
+</html>
