@@ -1,23 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shaivi Shah | Engineering Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#050814;
+    --card:rgba(255,255,255,0.05);
+    --gold:#d4af37;
+    --blue:#4ea1ff;
+    --text:#e5e7eb;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+body{
+    background: radial-gradient(circle at top,#0b1b3a,#050814 60%);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+/* PARTICLES */
+canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    background:rgba(0,0,0,0.35);
+    backdrop-filter:blur(14px);
+    z-index:1000;
+    border-bottom:1px solid rgba(212,175,55,0.2);
+}
+
+.logo{
+    font-weight:700;
+    color:var(--gold);
+    letter-spacing:2px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 12px;
+    font-size:14px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:var(--gold);
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:3.8rem;
+}
+
+.hero h1 span{
+    color:var(--gold);
+    text-shadow:0 0 20px rgba(212,175,55,0.25);
+}
+
+.hero h2{
+    font-weight:400;
+    color:#aab4c3;
+    margin-top:10px;
+    min-height:30px;
+}
+
+.hero p{
+    max-width:720px;
+    margin:20px auto;
+    color:#b6c2d1;
+    line-height:1.7;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 28px;
+    background:linear-gradient(135deg,var(--gold),#ffdf70);
+    color:#000;
+    border-radius:30px;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* SECTIONS */
+section{
+    padding:90px 10%;
+}
+
+.title{
+    font-size:2.2rem;
+    color:var(--gold);
+    margin-bottom:30px;
+    text-align:center;
+}
+
+/* CARDS */
+.card, .project{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:25px;
+    border-radius:18px;
+    backdrop-filter:blur(12px);
+    transition:0.3s;
+}
+
+.card:hover, .project:hover{
+    transform:translateY(-6px);
+    border-color:rgba(212,175,55,0.4);
+    box-shadow:0 0 25px rgba(212,175,55,0.12);
+}
+
+/* SKILLS */
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+}
+
+.skill{
+    padding:10px 15px;
+    border-radius:20px;
+    background:rgba(78,161,255,0.12);
+    border:1px solid rgba(78,161,255,0.35);
+    font-size:13px;
+    transition:0.3s;
+}
+
+.skill:hover{
+    transform:scale(1.05);
+    border-color:var(--gold);
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+
+/* TIMELINE */
+.timeline{
+    max-width:850px;
+    margin:auto;
+}
+
+.item{
+    background:rgba(255,255,255,0.04);
+    padding:20px;
+    border-left:3px solid var(--gold);
+    margin-bottom:18px;
+    border-radius:12px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    color:#777;
+    background:#02030a;
+}
+
+/* ANIMATION */
+.hidden{
+    opacity:0;
+    transform:translateY(30px);
+    transition:all 0.8s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<!-- NAV -->
+<nav>
+    <div class="logo">SS</div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/shaivishah2028" target="_blank">GitHub</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>Hi, I'm <span>Shaivi Shah</span></h1>
+        <h2 id="typing"></h2>
+        <p>
+            Year 12 student passionate about engineering, robotics, mathematics, 
+            and computer science. I enjoy solving real-world problems through logic and design.
+        </p>
+        <a class="btn" href="#about">Explore Portfolio</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="hidden">
+    <h2 class="title">About Me</h2>
+    <div class="card">
+        I am a Year 12 student aspiring to study Engineering at university. I enjoy robotics, computing, communication, and analytical problem solving. My goal is to develop technologies that solve real-world challenges.
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="hidden">
+    <h2 class="title">Skills</h2>
+    <div class="skills">
+        <div class="skill">Python</div>
+        <div class="skill">Problem Solving</div>
+        <div class="skill">Robotics (FLL x2)</div>
+        <div class="skill">Public Speaking</div>
+        <div class="skill">Debate & Communication</div>
+        <div class="skill">Leadership</div>
+        <div class="skill">Teamwork</div>
+        <div class="skill">Trinity Grade 8 Computer Skills</div>
+        <div class="skill">Trinity Grade 6 Keyboard</div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="hidden">
+    <h2 class="title">Education</h2>
+
+    <div class="timeline">
+        <div class="item">
+            <h3>A-Levels</h3>
+            Mathematics, Further Mathematics, Physics, Computer Science
+        </div>
+
+        <div class="item">
+            <h3>GCSE Subjects</h3>
+            English Literature, English Language, Mathematics, Biology, Chemistry, Physics, Business Studies, Computer Science, Design & Technology, Geography
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="hidden">
+    <h2 class="title">Projects</h2>
+
+    <div class="grid">
+
+        <div class="project">
+            <h3>Portfolio Website</h3>
+            <p>Modern engineering-themed GitHub Pages portfolio.</p>
+        </div>
+
+        <div class="project">
+            <h3>Robotics (FLL)</h3>
+            <p>FIRST LEGO League competitions: Cargo Connect & SuperPowered.</p>
+        </div>
+
+        <div class="project">
+            <h3>Python Projects</h3>
+            <p>Small programming and logic-based projects in Python.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="hidden">
+    <h2 class="title">Achievements</h2>
+
+    <div class="grid">
+
+        <div class="project">
+            <h3>Robotics & Technology</h3>
+            FLL Cargo Connect (2021–22)<br>
+            FLL SuperPowered (2022–23)<br>
+            AI Workshop (Futures Abroad) – Full Scholarship ($900)<br>
+            Technology Bootcamps & Camps
+        </div>
+
+        <div class="project">
+            <h3>Public Speaking</h3>
+            Trinity Communication Skills Grade 4–8<br>
+            Gavels Club Awards (Speaker, Evaluator, Master)<br>
+            Outstanding Gavelier of the Year
+        </div>
+
+        <div class="project">
+            <h3>Academic</h3>
+            UKMT JMC Participation<br>
+            UKMT IMC Bronze<br>
+            Academic Excellence in Sciences<br>
+            Physics Challenge Participation
+        </div>
+
+        <div class="project">
+            <h3>Leadership & Activities</h3>
+            MUN Conferences (EISJ, JC MUN)<br>
+            World Scholar’s Cup Silver Awards<br>
+            Youth Leadership Forum
+        </div>
+
+    </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="hidden">
     <h2 class="title">Contact</h2>
 
     <div class="card" style="text-align:center;">
-
-        <p style="margin-bottom:10px;">
-            📧 Email: <b>your-email@example.com</b>
-        </p>
-
-        <p style="margin-bottom:10px;">
-            💻 GitHub: 
-            <a href="https://github.com/shaivishah2028" target="_blank" style="color:var(--gold); text-decoration:none;">
-                github.com/shaivishah2028
-            </a>
-        </p>
-
-        <p>
-            I am currently open to STEM, robotics, and engineering opportunities.
-        </p>
-
+        <p>📧 Email: <b>your-email@example.com</b></p>
+        <p>💻 GitHub: <a href="https://github.com/shaivishah2028" style="color:var(--gold);">github.com/shaivishah2028</a></p>
+        <p style="margin-top:10px;">Open to STEM, robotics, and engineering opportunities.</p>
     </div>
 </section>
+
+<footer>
+    © 2026 Shaivi Shah | Engineering Portfolio
+</footer>
+
+<script>
+// typing effect
+const text=["Future Engineer","Robotics Enthusiast","Problem Solver"];
+let i=0,j=0,del=false;
+
+function type(){
+    const el=document.getElementById("typing");
+    let current=text[i];
+
+    if(!del){
+        el.innerHTML=current.substring(0,j++);
+        if(j>current.length){del=true;setTimeout(type,1000);return;}
+    } else {
+        el.innerHTML=current.substring(0,j--);
+        if(j<0){del=false;i=(i+1)%text.length;}
+    }
+    setTimeout(type,100);
+}
+type();
+
+// scroll animation
+const obs=new IntersectionObserver(e=>{
+    e.forEach(x=>{
+        if(x.isIntersecting) x.target.classList.add("show");
+    });
+});
+document.querySelectorAll(".hidden").forEach(el=>obs.observe(el));
+
+// particles
+const c=document.getElementById("particles");
+const ctx=c.getContext("2d");
+c.width=innerWidth;
+c.height=innerHeight;
+
+let p=[];
+for(let i=0;i<70;i++){
+    p.push({
+        x:Math.random()*c.width,
+        y:Math.random()*c.height,
+        r:Math.random()*2,
+        dx:(Math.random()-0.5),
+        dy:(Math.random()-0.5)
+    });
+}
+
+function draw(){
+    ctx.clearRect(0,0,c.width,c.height);
+    ctx.fillStyle="rgba(212,175,55,0.5)";
+    p.forEach(o=>{
+        ctx.beginPath();
+        ctx.arc(o.x,o.y,o.r,0,Math.PI*2);
+        ctx.fill();
+        o.x+=o.dx;
+        o.y+=o.dy;
+    });
+    requestAnimationFrame(draw);
+}
+draw();
+</script>
+
+</body>
+</html>
