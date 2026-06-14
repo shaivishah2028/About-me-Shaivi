@@ -78,9 +78,12 @@ nav a:hover{color:var(--gold);}
 }
 
 @keyframes blink{
-    50%{border-color:transparent;}
+    50%{
+        border-color:transparent;
+    }
 }
 
+    
 .hero p{
     max-width:700px;
     margin:20px auto;
@@ -366,7 +369,7 @@ footer{
     <h2 class="title">Contact</h2>
 
     <div class="card" style="text-align:center;">
-        📧 Email: your-email@example.com<br>
+        📧 Email: shaivishah2028@gmail.com<br>
         💻 GitHub: shaivishah2028
     </div>
 </section>
@@ -377,22 +380,57 @@ footer{
 
 <script>
 
-// typing animation (FIXED)
-const text = "Future Engineer • Robotics • Problem Solver";
-let i = 0;
+// rotating typing animation
+const words = [
+    "Future Engineer",
+    "Robotics",
+    "Problem Solver"
+];
 
-function typeWriter(){
-    const el = document.getElementById("typing");
-    if(!el) return;
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
 
-    if(i < text.length){
-        el.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 60);
+function typeEffect() {
+
+    const typingElement = document.getElementById("typing");
+    const currentWord = words[wordIndex];
+
+    if (!deleting) {
+
+        typingElement.textContent =
+            currentWord.substring(0, charIndex + 1);
+
+        charIndex++;
+
+        if (charIndex === currentWord.length) {
+            deleting = true;
+            setTimeout(typeEffect, 1500);
+            return;
+        }
+
+    } else {
+
+        typingElement.textContent =
+            currentWord.substring(0, charIndex - 1);
+
+        charIndex--;
+
+        if (charIndex === 0) {
+            deleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+        }
     }
+
+    setTimeout(typeEffect, deleting ? 50 : 100);
 }
 
-window.addEventListener("DOMContentLoaded", typeWriter);
+window.addEventListener("DOMContentLoaded", typeEffect);
+
+
+
+
+    
 
 
 // filter function
